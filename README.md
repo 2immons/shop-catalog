@@ -1,19 +1,22 @@
-# shop-catalog
+# Каталог товаров интернет-магазина
 
-## Project setup
-```
+#### Макет: 
+[Figma](https://www.figma.com/file/uBaU2XAC6gZqtshk59mMHL)
+
+## Инициализация проекта
+
+```sh
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Компиляция и запуск в режиме dev с hot-reload
+
+```sh
+npm run dev
 ```
 
-### Compiles and minifies for production
-```
+### Компиляция в режиме prod
+
+```sh
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
