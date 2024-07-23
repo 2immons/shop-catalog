@@ -27,11 +27,19 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .catalog {
-  width: 70%;
+  width: 80%;
+  margin-left: 3%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: repeat(3, 372px);
   column-gap: 16px;
   row-gap: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .catalog {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>

@@ -19,24 +19,27 @@ export default defineComponent({
 <style lang="scss">
 #app {
   max-width: 1720px;
+  width: 100%;
+  padding: 0 10px;
   margin: 0 auto;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: PT Sans, sans-serif;
+  line-height: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@media screen and (max-width: 1440px) {
+  #app {
+    max-width: 1240px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  #app {
+    max-width: 375px;
+  }
+}
+
 </style>

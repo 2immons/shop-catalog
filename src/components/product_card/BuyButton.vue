@@ -12,13 +12,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 button {
-  width: 75px;
+  width: 80px;
   height: 38px;
   border-radius: 4px;
   border: 1px solid var(--c-btn-border);
   color: var(--c-btn-border);
   background: transparent;
-  padding: 12px 16px 12px 16px;
+  padding: 12px;
   gap: 4px;
   font-weight: 700;
   font-size: 14px;

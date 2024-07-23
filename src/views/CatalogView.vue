@@ -3,12 +3,15 @@ import { defineComponent } from 'vue';
 import PageHeader from "@/components/PageHeader.vue";
 import CatalogComponent from "@/components/CatalogComponent.vue";
 import SideMenu from "@/components/SideMenu.vue";
+import PageHeader__Mobile from "@/components/mobile/PageHeader__Mobile.vue";
 
 export default defineComponent({
   name: "CatalogView",
   components: {
     SideMenu,
-    PageHeader, CatalogComponent
+    PageHeader,
+    CatalogComponent,
+    PageHeader__Mobile
   }
 });
 </script>
@@ -16,6 +19,7 @@ export default defineComponent({
 <template>
   <div class="catalog-view">
     <PageHeader />
+    <PageHeader__Mobile />
     <main>
       <SideMenu />
       <CatalogComponent />

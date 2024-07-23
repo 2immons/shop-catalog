@@ -19,13 +19,20 @@ export default defineComponent({
 .input-wrapper {
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
 input {
-  border: 1px solid var(--c-btn-border);
+  border: 1px solid #AAAAAA;
   border-radius: 10px;
+  height: 100%;
   gap: 8px;
   padding: 8px 20px 8px 50px;
+  width: 100%;
+
+  :focus {
+    border: 1px solid var(--c-btn-border);
+  }
 }
 
 svg {

@@ -1,23 +1,25 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
-import CategoryFilter from './CategoryFilter.vue'
+import CategoryItem from './CategoryItem.vue'
 
 export default defineComponent({
   name: "CategoryFilter",
-  components: { CategoryFilter }
+  components: {CategoryItem }
 })
 </script>
 
 <template>
 <div class="category-filter-wrapper">
-  <CategoryFilter />
-  <CategoryFilter />
-  <CategoryFilter />
-  <CategoryFilter />
+  <CategoryItem />
+  <CategoryItem />
+  <CategoryItem />
+  <CategoryItem />
 </div>
 
 </template>
 
 <style scoped lang="scss">
-
+.category-filter-wrapper {
+  width: 100%;
+}
 </style>
