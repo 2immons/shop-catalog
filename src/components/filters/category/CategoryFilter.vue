@@ -1,19 +1,27 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import CategoryItem from './CategoryItem.vue'
+import {categoriesStore} from "@/store/category";
 
 export default defineComponent({
   name: "CategoryFilter",
-  components: {CategoryItem }
+  components: { CategoryItem },
+  computed: {
+    categories() {
+      const store = categoriesStore();
+      return store.categories;
+    }
+  }
 })
 </script>
 
 <template>
 <div class="category-filter-wrapper">
-  <CategoryItem />
-  <CategoryItem />
-  <CategoryItem />
-  <CategoryItem />
+  <CategoryItem
+      v-for="category in categories"
+      :key="category.id"
+      :category="category"
+  />
 </div>
 
 </template>

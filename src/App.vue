@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import '../src/styles/main.scss'
 import CatalogView from "@/views/CatalogView.vue";
@@ -41,5 +41,4 @@ export default defineComponent({
     max-width: 375px;
   }
 }
-
 </style>

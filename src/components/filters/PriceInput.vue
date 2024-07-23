@@ -2,14 +2,33 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "PriceInput"
+  name: "PriceInput",
+  data() {
+    return {
+      price: ''
+    }
+  },
+  methods: {
+    handleInput(event: Event) {
+      const target = event.target as HTMLInputElement
+      const value = target.value
+          .replace(/ ₽/g, '')
+          .replace(/₽/g, '')
+      this.price = value ? `${value} ₽` : ''
+      target.value = this.price
+    }
+  }
 })
 </script>
 
 <template>
   <div class="price-input-wrapper">
-    <input type="number">
-    <div class="input__text">от</div>
+    <input
+        type="text"
+        v-model="price"
+        @input="handleInput"
+    >
+    <span class="input__text">от</span>
   </div>
 </template>
 
@@ -24,8 +43,14 @@ input {
   width: 100%;
   border: 1px solid var(--c-border);
   border-radius: 4px;
-  padding: 0 10px 0 25px;
+  padding: 0 10px 0 20px;
   height: 100%;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+input:focus {
+  outline: 1px solid var(--c-brand);
 }
 
 .input__text {
@@ -33,5 +58,8 @@ input {
   left: 5px;
   top: 50%;
   transform: translateY(-50%);
+  color: var(--c-font-second);
+  font-size: 12px;
+  line-height: 14px;
 }
 </style>

@@ -1,6 +1,9 @@
 # Каталог товаров интернет-магазина
 
-#### Макет: 
+### Ссылка на остальное тестовое задание:
+[Google Docs](https://docs.google.com/document/d/1-18dwMxaxnYB4otNTOYCeB2G3CB2UCFnLnSnsp0fzuk/edit?usp=sharing)
+
+### Макет: 
 [Figma](https://www.figma.com/file/uBaU2XAC6gZqtshk59mMHL)
 
 ## Инициализация проекта

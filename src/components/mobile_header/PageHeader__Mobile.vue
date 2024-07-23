@@ -1,6 +1,6 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
-import SearchInput__Mobile from "@/components/mobile/SearchInput__Mobile.vue";
+import SearchInput__Mobile from "@/components/mobile_header/SearchInput__Mobile.vue";
 
 export default defineComponent({
   name: "PageHeader__Mobile",

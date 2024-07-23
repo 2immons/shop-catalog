@@ -1,9 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import PageHeader from "@/components/PageHeader.vue";
+import PageHeader from "@/components/header/PageHeader.vue";
 import CatalogComponent from "@/components/CatalogComponent.vue";
 import SideMenu from "@/components/SideMenu.vue";
-import PageHeader__Mobile from "@/components/mobile/PageHeader__Mobile.vue";
+import PageHeader__Mobile from "@/components/mobile_header/PageHeader__Mobile.vue";
 
 export default defineComponent({
   name: "CatalogView",
@@ -12,14 +12,31 @@ export default defineComponent({
     PageHeader,
     CatalogComponent,
     PageHeader__Mobile
+  },
+  data () {
+    return {
+      isMobile: false
+    }
+  },
+  methods: {
+    checkScreenWidth() {
+      this.isMobile = window.innerWidth <= 800
+    }
+  },
+  mounted() {
+    this.checkScreenWidth()
+    window.addEventListener('resize', this.checkScreenWidth)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkScreenWidth)
   }
 });
 </script>
 
 <template>
   <div class="catalog-view">
-    <PageHeader />
-    <PageHeader__Mobile />
+    <PageHeader v-if="!this.isMobile"/>
+    <PageHeader__Mobile v-if="this.isMobile"/>
     <main>
       <SideMenu />
       <CatalogComponent />

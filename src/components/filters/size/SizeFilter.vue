@@ -1,12 +1,20 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import FilterSearch from "@/components/filters/FilterSearch.vue";
-import CheckboxesList from "@/components/CheckboxesList.vue";
+import CheckboxesList from "@/components/checkboxes/CheckboxesList.vue";
 import ClearButton from "@/components/buttons/ClearButton.vue";
+import {sizesStore} from "@/store/size";
 
 export default defineComponent({
   name: "CategoryFilter",
-  components: {ClearButton, CheckboxesList, FilterSearch }
+  components: {ClearButton, CheckboxesList, FilterSearch },
+  computed: {
+    sizes() {
+      const store = sizesStore();
+      return store.sizes;
+    }
+  }
+
 })
 </script>
 
@@ -15,7 +23,7 @@ export default defineComponent({
     <div class="category-header">
       <p>Размер</p>
     </div>
-    <CheckboxesList />
+    <CheckboxesList :items="sizes"/>
   </div>
 </template>
 

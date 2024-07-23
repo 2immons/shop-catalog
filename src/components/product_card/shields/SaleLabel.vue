@@ -1,19 +1,24 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, PropType} from 'vue'
 
 export default defineComponent({
-  name: "SaleLabel"
+  name: "SaleLabel",
+  props: {
+    value:  {
+      type: Object as PropType<Number>
+      }
+  }
 })
 </script>
 
 <template>
-<span>
-  25%
-</span>
+<div>
+  {{ value }}%
+</div>
 </template>
 
 <style scoped lang="scss">
-span {
+div {
   position: absolute;
   display: flex;
   align-items: center;

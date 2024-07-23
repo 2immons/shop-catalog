@@ -1,15 +1,20 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, PropType} from 'vue'
 
 export default defineComponent({
-  name: "CheckboxComponent"
+  name: "CheckboxComponent",
+  props: {
+    value: {
+      type: [Number, String] as PropType<number | string>,
+    }
+  }
 })
 </script>
 
 <template>
 <label class="container">
-  Аттрибут
-  <input type="checkbox" checked="checked">
+  {{ value }}
+  <input type="checkbox">
   <span class="checkmark"></span>
 </label>
 </template>
@@ -23,9 +28,6 @@ export default defineComponent({
   padding-left: 35px;
   cursor: pointer;
   font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -43,11 +45,13 @@ export default defineComponent({
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: #eee;
+  background-color: var(--color-white);
+  border: 1px solid var(--c-border);
+  border-radius: 3px;
 }
 
 .container:hover input ~ .checkmark {
-  background-color: var(--c-border);
+  border: 1px solid var(--c-brand);
 }
 
 .container input:checked ~ .checkmark {
@@ -65,14 +69,12 @@ export default defineComponent({
 }
 
 .container .checkmark:after {
-  left: 7px;
+  left: 5px;
   top: 2px;
   width: 8px;
   height: 11px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 </style>

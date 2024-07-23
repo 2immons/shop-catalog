@@ -1,12 +1,20 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import FilterSearch from "@/components/filters/FilterSearch.vue";
-import CheckboxesList from "@/components/CheckboxesList.vue";
+import CheckboxesList from "@/components/checkboxes/CheckboxesList.vue";
 import ClearButton from "@/components/buttons/ClearButton.vue";
+import {brandsStore} from "@/store/brand";
 
 export default defineComponent({
   name: "CategoryFilter",
-  components: {ClearButton, CheckboxesList, FilterSearch }
+  components: {ClearButton, CheckboxesList, FilterSearch },
+  computed: {
+    brands() {
+      const store = brandsStore();
+      return store.brands
+
+    }
+  }
 })
 </script>
 
@@ -17,7 +25,7 @@ export default defineComponent({
     <ClearButton />
   </div>
   <FilterSearch />
-  <CheckboxesList />
+  <CheckboxesList :items="this.brands" />
 </div>
 </template>
 

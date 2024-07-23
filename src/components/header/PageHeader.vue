@@ -1,6 +1,6 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
-import SearchInput from "@/components/SearchInput.vue";
+import SearchInput from "@/components/header/SearchInput.vue";
 
 export default defineComponent({
   name: "PageHeader",
@@ -41,13 +41,14 @@ export default defineComponent({
   align-items: center;
   justify-content: space-between;
   padding: 12px 0 12px 0;
+  gap: 15px;
 }
 
 .logo-section {
   display: flex;
   flex-direction: row;
   justify-content: start;
-  width: 25%;
+  width: fit-content;
 }
 
 .logo-wrapper {
@@ -79,7 +80,17 @@ button {
   justify-content: space-between;
   height: 48px;
   width: 35%;
+  max-width: 400px;
   font-size: 14px;
+  gap: 10px;
+}
+
+.nav a {
+  cursor: pointer;
+}
+
+.nav a:hover {
+  color: var(--c-brand)
 }
 
 </style>
