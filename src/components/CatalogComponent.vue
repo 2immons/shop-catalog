@@ -34,6 +34,7 @@ export default defineComponent({
   grid-template-rows: repeat(3, 372px);
   column-gap: 16px;
   row-gap: 40px;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 800px) {
